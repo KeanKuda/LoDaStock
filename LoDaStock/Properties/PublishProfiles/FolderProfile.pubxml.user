@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\Kean\source\repos\LoDaStock\LoDaStock\bin\Release\net8.0</_PublishTargetUrl>
+    <History>True|2025-07-30T12:34:17.9588339Z||;True|2025-07-30T14:28:02.3941533+02:00||;True|2025-07-30T14:16:41.4250416+02:00||;True|2025-07-30T14:14:27.9523671+02:00||;True|2025-07-30T14:06:11.4500379+02:00||;True|2025-07-30T13:59:35.7446410+02:00||;True|2025-07-30T13:50:03.2492989+02:00||;True|2025-07-30T13:42:01.4778027+02:00||;True|2025-07-30T13:40:07.6902188+02:00||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=DESKTOP-GNR440D\SQLSERV22AK2025%3bDatabase=LoDaStock%3bUser Id=sa%3bPassword=AK96KA13&amp;a%3bTrustServerCertificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,289 @@
+﻿:root {
+    /* Définition des variables globales pour les couleurs principales utilisées dans le thème */
+    --color-principal: #7C4DFF; /* Couleur principale (violet) */
+    --color-secondary: #dadbff; /* Couleur secondaire (fond clair) */
+    --color-btn-bg: #efeefe; /* Couleur de fond des boutons */
+    --color-btn-hover: #7C4DFF; /* Couleur du bouton au survol */
+    --color-btn-text: #28223a; /* Couleur du texte sur bouton */
+}
+
+/* Style global du body */
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif; /* Police élégante et moderne */
+    background: #f7f8fb; /* Couleur de fond très claire */
+}
+
+/* ------------------ */
+/* Sidebar (barre latérale) */
+.sidebar {
+    min-width: 180px; /* Largeur minimale de la sidebar */
+    background: #fbfaff; /* Fond blanc cassé */
+    border-right: 1.5px solid #ececec; /* Bordure droite discrète */
+    min-height: 100vh; /* Hauteur sur toute la page */
+}
+
+/* Avatar rond utilisateur dans la sidebar */
+.circle-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%; /* Cercle parfait */
+    background: linear-gradient(135deg,#ECE9FF 60%,#e7e1fc 100%); /* Dégradé violet doux */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--color-principal); /* Couleur du texte/avatar */
+}
+
+/* Pseudo de l'utilisateur dans la sidebar */
+.username {
+    font-size: 1.05rem;
+    color: #444;
+    font-weight: 600;
+}
+
+/* Navigation dans la sidebar */
+.sidebar .nav-link {
+    color: var(--color-principal);
+    font-weight: 500;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    transition: background .15s, color .15s; /* Animation transition douce */
+    margin-bottom: 4px;
+}
+
+    /* Style actif ou survolé d'un lien dans la sidebar */
+    .sidebar .nav-link.active,
+    .sidebar .nav-link:hover {
+        background: var(--color-secondary); /* Fond plus visible */
+        color: #4E148C; /* Couleur plus foncée au survol */
+    }
+
+/* ------------------ */
+/* En-tête principale de la page */
+.main-header {
+    background: #fff; /* Fond blanc */
+    border-bottom: 1.5px solid #ebebf0; /* Ligne discrète sous l'en-tête */
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem; /* Espacement à gauche */
+}
+
+/* Logo dans l'en-tête */
+.main-logo {
+    color: var(--color-principal);
+    letter-spacing: 1.5px; /* Espacement des lettres */
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* ------------------ */
+/* Boutons du dashboard principal */
+.dashboard-buttons {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: row; /* Mise en ligne des boutons (horizontal) */
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem; /* Espacement entre les boutons */
+}
+
+/* Le texte des gros boutons (Big button) */
+.big-btn span {
+    display: block;
+    word-break: break-word;
+    white-space: normal;
+    font-size: 1rem;
+}
+
+/* Apparence des gros boutons principaux du dashboard */
+.big-btn {
+    background: var(--color-btn-bg);
+    border-radius: 22px;
+    font-size: 1.23rem;
+    font-weight: 600;
+    color: var(--color-btn-text);
+    min-width: 200px;
+    max-width: 500px;
+    width: auto;
+    flex: 0 1 auto;
+    padding: 2.1rem 1rem 1.1rem 1rem; /* Espacement interne */
+    box-shadow: 0 2px 15px rgba(124,77,255,0.08);
+    margin-bottom: 16px;
+    text-align: center;
+    transition: background .2s, color .2s, transform .13s; /* Animation survol... */
+    border: none;
+}
+
+    /* Au survol ou focus : bouton grossit, change de couleur (effet dynamique) */
+    .big-btn:hover, .big-btn:focus {
+        background: var(--color-btn-hover);
+        color: white;
+        transform: scale(1.035) translateY(-2px);
+        text-decoration: none;
+    }
+
+/* Icône dans les gros boutons */
+.icon-btn {
+    font-size: 2.5rem;
+    color: var(--color-principal);
+    transition: color .18s;
+}
+
+/* Couleur de l'icône change quand on survole le bouton */
+.big-btn:hover .icon-btn {
+    color: #fff;
+}
+
+/* ------------------- */
+/* Responsive Design : adaptation mobile/tablette */
+@media (max-width: 767px) {
+    /* Liens dans la sidebar plus petits, espacement adapté */
+    .sidebar .nav-link {
+        font-size: .98rem;
+        padding: .65rem 0 .65rem .7rem;
+        text-align: left;
+    }
+
+    /* Titre plus petit dans l'en-tête */
+    .main-header h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Gros boutons plus petits */
+    .big-btn {
+        font-size: 1rem;
+        padding: 1.3rem .5rem .7rem .5rem;
+    }
+
+    /* Icônes plus petites */
+    .icon-btn {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 575px) {
+    /* Mouvement supplémentaire pour les gros boutons sur les très petits écrans */
+    .big-btn {
+        padding: 0.9rem 0.5rem 0.6rem 0.5rem;
+    }
+
+    .sidebar {
+        min-width: 58px; /* Sidebar compactée sur mobile */
+    }
+}
+
+/* ----------------------------- */
+/* Tableau des commandes */
+.commande-table {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 3px 22px -7px rgba(80, 55, 207, 0.08); /* Ombre douce */
+    overflow-x: auto; /* Scroll horizontal sur petits écrans */
+    padding: 2rem 1.2rem;
+}
+
+    /* Table dans le conteneur .commande-table */
+    .commande-table .table {
+        margin-bottom: 0;
+        background: transparent;
+        border-radius: 12px;
+    }
+
+    .commande-table th {
+        color: var(--color-principal);
+        font-weight: 700;
+        background: var(--color-secondary);
+        border: none;
+    }
+
+    .commande-table td {
+        vertical-align: middle;
+        border-bottom: 1.5px solid #edeffa;
+        background: #fcfcff;
+    }
+
+    .commande-table tr:last-child td {
+        border-bottom: none; /* Pas de séparation sur la dernière ligne */
+    }
+
+/* ----------------------------- */
+/* Formulaire d’ajout de commande */
+.commande-form {
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 3px 22px -10px rgba(124,77,255,0.10); /* Ombre violette légère */
+}
+
+    /* Label du formulaire - prend la couleur principale */
+    .commande-form label {
+        color: var(--color-principal);
+        font-weight: 600;
+    }
+
+    /* Champ texte et select stylisés */
+    .commande-form .form-control, .commande-form .form-select {
+        border-radius: 11px;
+        border: 1.5px solid #dadbff;
+        background: #f7f8fb;
+        font-weight: 500;
+        transition: border-color .18s;
+    }
+
+        /* Focus dans formulaire : couleur d’accentuation */
+        .commande-form .form-control:focus,
+        .commande-form .form-select:focus {
+            border-color: var(--color-principal);
+            box-shadow: 0 0 0 2.5px #e4d3ff33;
+        }
+
+/* ----------------------------- */
+/* Bouton personnalisé pour actions (ex : valider formulaire) */
+.custom-btn {
+    background: var(--color-principal);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    box-shadow: 0 2px 15px rgba(124,77,255,0.07);
+    transition: background .18s, color .18s, transform .12s;
+}
+
+    /* Au survol ou focus : changement couleur/fondu/relief */
+    .custom-btn:hover,
+    .custom-btn:focus {
+        background: #4E148C;
+        color: #fff;
+        transform: scale(1.04) translateY(-2px);
+    }
+
+/* ----------------------------- */
+/* Titre de page principal : couleur et graisse */
+.page-title {
+    color: var(--color-principal);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ----------------------------- */
+/* Responsive - adapte les paddings pour tableau et formulaire en-dessous de la largeur 991px */
+@media (max-width: 991px) {
+    .commande-table,
+    .commande-form {
+        padding: 1.2rem .5rem;
+    }
+}
+
+/* ----------------------------- */
+/* Harmonise l’aspect de la modale d’édition (fournisseur ou commande) */
+.modal .modal-content {
+    border-radius: 16px;
+    box-shadow: 0 2px 24px -10px #6b46c13a;
+}
+
+/* Message d’alerte/information (succès/erreur/info) */
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+}
